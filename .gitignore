@@ -1,0 +1,41 @@
+# Virtual environment
+venv/
+
+# Python bytecode
+__pycache__/
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Node.js
+node_modules/
+
+# Next.js build
+.next/
+
+# Django migrations
+**/migrations/
+
+# Environment variables
+.env
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+*.swn
+
+# Logs and databases
+*.log
+*.sql
+
+# Ignore compiled Python files
+*.pyc
+
+# Ignore database configuration
+db.sqlite3
+
+# Ignore secret key
+secret.key
