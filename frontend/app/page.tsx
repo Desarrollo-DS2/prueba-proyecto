@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hola
+      Holas
       <Table dataSource={tasks.tasks} columns={columns} loading={tasks.loading} />;
       <Input placeholder="Basic usage" value={payload.title} onChange={handleInputChange} name='title'/>
       <Button type="primary" onClick={handleCreateTask}>Primary Button</Button>
