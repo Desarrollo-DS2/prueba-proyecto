@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+import django_heroku
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,8 +28,11 @@ SECRET_KEY = 'django-insecure-cz2rm6r%2q55alwuvzfbc8ks!!6s%4ni8qag1f2a=8+vrr+2=0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['', '']
+ALLOWED_HOSTS = ['https://backend-prueba-0a933b9f4eef.herokuapp.com/']
 
+DATABASES = {
+    'default': dj_database_url.config(default=config('DATABASE_URL'))
+}
 
 # Application definition
 
@@ -44,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -117,3 +124,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "",
 ]
+
+django_heroku.settings(locals())
